@@ -12,12 +12,12 @@ jobs:
       rust_version: ${{ steps.run-script.outputs.rust_version }}
       glibc_version: ${{ steps.run-script.outputs.glibc_version }}
       alpine_version: ${{ steps.run-script.outputs.alpine_version }}
-      tag: ${{ steps.check-versions.outputs.tag }}
+      tag: ${{ steps.run-script.outputs.tag }}
     steps:
     - uses: actions/checkout@v4
     - id: run-script
       run: |
-        ./scripts/ci-check-versions.sh
+        /scripts/ci-check-versions.sh
   check-tag-exist:
     runs-on: ubuntu-latest
     needs: check-versions
@@ -46,7 +46,7 @@ jobs:
         GLIBC_VERSION: ${{ needs.check-versions.outputs.glibc_version }}
         ALPINE_VERSION: ${{ needs.check-versions.outputs.alpine_version }}
       run: |
-        ./scripts/ci-build_push.sh mmta/alpine-glibc
+        /scripts/ci-build_push.sh mmta/alpine-glibc
         # ./scripts/ci-build_push.sh mmta/alpine-glibc push
 
       
