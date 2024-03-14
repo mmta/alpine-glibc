@@ -35,7 +35,7 @@ echo "Tagging the result with $image_name:$tag ..."
 
 docker tag $image_name $image_name:${tag}
 
-if [ "push" = "true" ]; then
+if [ "$push" = "true" ]; then
   echo "Pushing $image_name:latest ..."
   docker push $image_name
   echo "Pushing $image_name:${tag} ..."
