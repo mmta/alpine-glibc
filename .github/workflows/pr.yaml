@@ -11,7 +11,7 @@ jobs:
       rust_version: ${{ steps.run-script.outputs.rust_version }}
       glibc_version: ${{ steps.run-script.outputs.glibc_version }}
       alpine_version: ${{ steps.run-script.outputs.alpine_version }}
-      tag: ${{ steps.check-versions.outputs.tag }}
+      tag: ${{ steps.run-script.outputs.tag }}
     steps:
     - uses: actions/checkout@v4
     - id: run-script

@@ -25,12 +25,12 @@ jobs:
       tag: ${{ steps.check-tag.outputs.tag }}
     steps:
     - id: check-tag
-    - env:
+      env:
         tag: ${{ needs.check-versions.outputs.tag }}
       uses: tyriis/docker-image-tag-exists@v2.0.0
       with:
         registry: docker.io
-        repository: mmta/alpine-glibc
+        respository: mmta/alpine-glibc
         tag: ${{ env.tag }}
   build:
     runs-on: ubuntu-latest
