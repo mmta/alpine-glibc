@@ -1,5 +1,7 @@
 # Minimal Alpine image with glibc
 
+[![Daily Build](https://github.com/mmta/alpine-glibc/actions/workflows/cron.yaml/badge.svg)](https://github.com/mmta/alpine-glibc/actions/workflows/cron.yaml)
+
 Yet another alpine docker image with glibc, this time also tracking Rust compiler version.
 
 `latest` tag will always be based on `alpine:latest` image that includes the same `glibc` version used in the latest `rust:slim`.
@@ -27,4 +29,8 @@ COPY --from=builder /app/target/release/app /app
 ENTRYPOINT [ "/app" ]
 ```
 
+## Usage
+
 See [example](./example) for a test project that _should always_ built and run successfully.
+
+List of all available image tags can be found in [Docker hub](https://hub.docker.com/r/mmta/alpine-glibc).
