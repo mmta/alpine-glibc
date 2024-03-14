@@ -34,3 +34,6 @@ ENTRYPOINT [ "/app" ]
 See [example](./example) for a test project that _should always_ built and run successfully.
 
 List of all available image tags can be found in [Docker hub](https://hub.docker.com/r/mmta/alpine-glibc).
+
+Clone this repo and execute `run.sh` to build the image locally.
+
