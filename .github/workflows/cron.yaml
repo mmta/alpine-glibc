@@ -45,7 +45,6 @@ jobs:
         GLIBC_VERSION: ${{ needs.check-versions.outputs.glibc_version }}
         ALPINE_VERSION: ${{ needs.check-versions.outputs.alpine_version }}
       run: |
-        ./scripts/ci-build_push.sh mmta/alpine-glibc
-        # ./scripts/ci-build_push.sh mmta/alpine-glibc push
+        ./scripts/ci-build_push.sh mmta/alpine-glibc push
 
       
