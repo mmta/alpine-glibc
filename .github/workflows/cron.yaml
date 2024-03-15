@@ -39,6 +39,11 @@ jobs:
     if: ${{ needs.check-tag-exist.outputs.tag == 'not found' }}
     steps:
     - uses: actions/checkout@v4
+    - name: login-to-docker-io
+      uses: "docker/login-action@v2"
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}    
     - id: build-and-push
       env:
         RUST_VERSION: ${{ needs.check-versions.outputs.rust_version }}
